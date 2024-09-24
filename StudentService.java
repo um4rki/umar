@@ -31,4 +31,15 @@ public class StudentService {
         students.removeIf(student -> student.getFirstName().equals(studentName));
         System.out.println("Student deleted " + studentName);
     }
+
+
+    public void searchStudent(String studentFirstName, String studentLastName,String studentHobbies){
+        for (Student student : students) {
+            if(student.getFirstName().equals(studentFirstName) && student.getLastName().equals(studentLastName)&& student.getHobbies().equals(studentHobbies)){
+                System.out.println("Bu student topildi " + student);
+                return;
+            }
+        }
+        System.out.println("Student haqida ma'lumot yo'q");
+    }
 }
